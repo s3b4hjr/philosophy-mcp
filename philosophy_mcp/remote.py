@@ -6,7 +6,14 @@ Used by the MCP server when no local hugo_content/ is available.
 import urllib.request
 import urllib.parse
 import json
+import ssl
 from typing import Optional
+
+try:
+    import certifi
+    _ssl_ctx = ssl.create_default_context(cafile=certifi.where())
+except ImportError:
+    _ssl_ctx = ssl.create_default_context()
 
 
 DEFAULT_API_URL = "https://filosofiaemresumo.com.br/api"
@@ -23,7 +30,7 @@ class RemoteCorpus:
         if params:
             url += "?" + urllib.parse.urlencode(params)
         req = urllib.request.Request(url, headers={"Accept": "application/json"})
-        with urllib.request.urlopen(req, timeout=15) as resp:
+        with urllib.request.urlopen(req, timeout=15, context=_ssl_ctx) as resp:
             return json.loads(resp.read().decode("utf-8"))
 
     # ── Glossary ──────────────────────────────────────────
