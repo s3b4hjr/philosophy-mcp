@@ -6,12 +6,30 @@ An [MCP](https://modelcontextprotocol.io) server for a multilingual philosophy c
 
 ---
 
+## Requirements
+
+- Python >= 3.10
+
+---
+
 ## Quick Start
 
 ### Install from PyPI
 
 ```bash
 pip install philosophy-mcp
+```
+
+### Install with uv
+
+```bash
+uv pip install philosophy-mcp
+```
+
+### Run directly with uvx (no install needed)
+
+```bash
+uvx philosophy-mcp
 ```
 
 ### Use with Claude Desktop
