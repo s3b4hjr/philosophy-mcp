@@ -57,6 +57,29 @@ Ask your AI assistant anything about philosophy. The MCP tools give it access to
 - *"¿Cuáles son las síntesis disponibles?"* → lists period syntheses
 - *"Search 'logos' across everything"* → full-text search
 
+### Examples
+
+**Portuguese** (default — `lang="pt"`):
+
+> "O que significa imperativo categórico?"
+> "Me fale sobre Sócrates"
+> "Quais são os períodos da filosofia?"
+
+**English** (`lang="en"`):
+
+> "What is eudaimonia?"
+> "Tell me about Aristotle's philosophy"
+> "List all thinker profiles in English"
+> "Search for 'virtue' in the glossary"
+
+**Spanish** (`lang="es"`):
+
+> "¿Qué es el logos?"
+> "Busca pensadores relacionados con el estoicismo"
+> "Dame la síntesis del período medieval"
+
+The assistant picks the language automatically based on your question, or you can ask explicitly: *"Search 'categorical imperative' in the English glossary"*.
+
 ### Available Tools
 
 | Tool | Description |

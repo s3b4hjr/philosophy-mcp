@@ -29,7 +29,10 @@ class RemoteCorpus:
         url = f"{self.api_url}{path}"
         if params:
             url += "?" + urllib.parse.urlencode(params)
-        req = urllib.request.Request(url, headers={"Accept": "application/json"})
+        req = urllib.request.Request(url, headers={
+            "Accept": "application/json",
+            "User-Agent": "philosophy-mcp/0.1",
+        })
         with urllib.request.urlopen(req, timeout=15, context=_ssl_ctx) as resp:
             return json.loads(resp.read().decode("utf-8"))
 
