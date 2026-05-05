@@ -4,7 +4,7 @@ build-backend = "hatchling.build"
 
 [project]
 name = "philosophy-mcp"
-version = "0.1.1"
+version = "0.1.2"
 description = "MCP server for a multilingual philosophy corpus — glossary, syntheses, thinker profiles, and articles in PT/EN/ES"
 readme = "README.md"
 license = "MIT"
