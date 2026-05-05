@@ -1,0 +1,39 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "philosophy-mcp"
+version = "0.1.0"
+description = "MCP server for a multilingual philosophy corpus — glossary, syntheses, thinker profiles, and articles in PT/EN/ES"
+readme = "README.md"
+license = "MIT"
+requires-python = ">=3.10"
+authors = [
+    { name = "Sebastião José da Silva Júnior" },
+]
+keywords = ["mcp", "philosophy", "filosofia", "glossary", "corpus"]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Education",
+    "Topic :: Education",
+    "Topic :: Text Processing :: Linguistic",
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+]
+dependencies = [
+    "mcp[cli]>=1.0.0",
+]
+
+[project.scripts]
+philosophy-mcp = "philosophy_mcp.server:main"
+
+[project.urls]
+Homepage = "https://filosofiaemresumo.com.br"
+Repository = "https://github.com/s3b4hjr/philosophy-mcp"
+
+[tool.hatch.build.targets.wheel]
+packages = ["philosophy_mcp"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
